@@ -11,7 +11,7 @@ $gradient : linear-gradient(90deg, #EB415C 0%, #F2715E 100%);
 $radius : 35px 35px 0px 35px;
 
 *,*::after,*::before{font-family: 'Poppins', sans-serif;}
-body{color: white !important;background: $blue;}
+body{color: white !important;background: $dark;}
 
 // Breakpoint
 $xs: 576px;
@@ -150,9 +150,14 @@ h2{
     color: $soft;
 }
 
-p{
+p,li{
     color: $soft;
 }
+
+//Main
+main{
+}
+
 // Menu
 header{
     position: absolute;
@@ -168,7 +173,7 @@ header{
     .brand{
         height: 5em;
         object-fit: contain;
-        @media(max-width: $sm) {
+        @media(max-width: $md) {
             height: 3.5em;
         }
     }
@@ -399,6 +404,18 @@ header{
             font-size: 12px;
         }
     }
+
+    &-submit{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background: $gradient;
+        >.iconify{
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
 }
 
 //Divider
@@ -457,7 +474,7 @@ header{
             background: $dark;
             margin-top: -9em;
             z-index: 10;
-            min-height: 30em;
+            min-height: 31em;
             
             .icon{
                 display: inline-block;
@@ -502,6 +519,13 @@ header{
         }
     }
 }
+.service-page{
+    .service-card{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 
 .project{
     padding: 5em 0px;
@@ -534,6 +558,7 @@ header{
 
         &:hover{
             background: #24309c;
+            color: white;
             .image{
                 .more{
                     display: flex !important;
@@ -542,6 +567,12 @@ header{
         }
     }
 }
+.project-page{
+    .project-card{
+        width:100% !important;
+    }
+}
+
 
 .articles{
     background: #f7f7f7;
@@ -556,7 +587,7 @@ header{
             "featured art3"
             "featured art4"
         ;
-        @media(max-width: $sm) {
+        @media(max-width: $md) {
             grid-template-columns: 1fr;
             grid-template-areas: 
                 "featured"
@@ -567,6 +598,8 @@ header{
             ;
         }
         .articles-card{
+            text-decoration: none;
+            display: block;
             &:nth-child(1){ grid-area: featured; }
             &:nth-child(2){ grid-area: art1; }
             &:nth-child(3){ grid-area: art2; }
@@ -580,6 +613,7 @@ header{
                     display: flex;
                     flex-direction: column;
                     gap: 2em;
+                    color: white;
                 }
             }
             
@@ -589,9 +623,13 @@ header{
                     max-width: 15em;
                     height: 100%;
                     object-fit: cover;
-                    @media(max-width: $sm) {
+                    @media(max-width: $md) {
                         width: 7em;
                         height: 7em;
+                    }
+                    @media(max-width: $lg) {
+                        width: 9em;
+                        height: 9em;
                     }
                 }
                 .body{
@@ -603,8 +641,11 @@ header{
                     .body>h5{color: white;}
                 }
 
-                @media(max-width: $sm) {
+                @media(max-width: $md) {
                     min-height: 7em;
+                }
+                @media(max-width: $lg) {
+                    min-height: 9em;
                 }
             }
 
@@ -620,7 +661,63 @@ header{
         }
     }
 }
+.articles-page{
+    .articles-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        @media(max-width: $md){
+            grid-template-columns: 1fr;
+        }
+        .articles-card{
+            display: block;
+            text-decoration: none;
+            min-height: 10em;
+            img{
+                max-width: 15em;
+                height: 100%;
+                object-fit: cover;
+                @media(max-width: $md) {
+                    width: 7em;
+                    height: 7em;
+                }
+                @media(max-width: $lg) {
+                    width: 9em;
+                    height: 9em;
+                }
+            }
+            .body{
+                >h5{color: #212121;}
+            }
+            &:hover{
+                background: $blue;
+                padding: 0px;
+                .body>h5{color: white;}
+            }
 
+            @media(max-width: $md) {
+                min-height: 7em;
+            }
+            @media(max-width: $lg) {
+                min-height: 9em;
+            }
+
+            .author{
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+                font-size: 12px;
+                letter-spacing: 0.3em;
+            }
+        }
+    }
+}
+.about-page{
+    padding-top: 4em;
+    padding-bottom: 4em;
+    background : linear-gradient(360deg, #00001E 0%, rgba(0, 0, 30, 0) 100%);
+}
 .client{
     padding: 5em 0px;
     background-color: white;

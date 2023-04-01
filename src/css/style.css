@@ -5,7 +5,7 @@
 
 body {
   color: white !important;
-  background: #000f92;
+  background: #00001e;
 }
 
 /* Extra small devices (phone) */
@@ -142,7 +142,7 @@ h2 {
   color: rgba(255, 255, 255, 0.8156862745);
 }
 
-p {
+p, li {
   color: rgba(255, 255, 255, 0.8156862745);
 }
 
@@ -166,7 +166,7 @@ header {
   -o-object-fit: contain;
      object-fit: contain;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .menu-box .brand {
     height: 3.5em;
   }
@@ -382,6 +382,17 @@ header {
 .btn-sosmed > .iconify {
   font-size: 12px;
 }
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: linear-gradient(90deg, #EB415C 0%, #F2715E 100%);
+}
+.btn-submit > .iconify {
+  width: 1.5em;
+  height: 1.5em;
+}
 
 .div-bar {
   background: linear-gradient(90deg, #EB415C 0%, #F2715E 100%);
@@ -439,7 +450,7 @@ header {
   background: #00001e;
   margin-top: -9em;
   z-index: 10;
-  min-height: 30em;
+  min-height: 31em;
 }
 .service-card .body .icon {
   display: inline-block;
@@ -487,6 +498,11 @@ header {
   width: 40px;
 }
 
+.service-page .service-card {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 .project {
   padding: 5em 0px;
 }
@@ -519,9 +535,14 @@ header {
 }
 .project-card:hover {
   background: #24309c;
+  color: white;
 }
 .project-card:hover .image .more {
   display: flex !important;
+}
+
+.project-page .project-card {
+  width: 100% !important;
 }
 
 .articles {
@@ -534,11 +555,15 @@ header {
   gap: 0.8em;
   grid-template-areas: "featured art1" "featured art2" "featured art3" "featured art4";
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .articles-box {
     grid-template-columns: 1fr;
     grid-template-areas: "featured" "art1" "art2" "art3" "art4";
   }
+}
+.articles-box .articles-card {
+  text-decoration: none;
+  display: block;
 }
 .articles-box .articles-card:nth-child(1) {
   grid-area: featured;
@@ -561,6 +586,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2em;
+  color: white;
 }
 .articles-box .articles-card:not(.featured) {
   min-height: 10em;
@@ -571,10 +597,16 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .articles-box .articles-card:not(.featured) img {
     width: 7em;
     height: 7em;
+  }
+}
+@media (max-width: 1200px) {
+  .articles-box .articles-card:not(.featured) img {
+    width: 9em;
+    height: 9em;
   }
 }
 .articles-box .articles-card:not(.featured) .body > h5 {
@@ -587,9 +619,14 @@ header {
 .articles-box .articles-card:not(.featured):hover .body > h5 {
   color: white;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .articles-box .articles-card:not(.featured) {
     min-height: 7em;
+  }
+}
+@media (max-width: 1200px) {
+  .articles-box .articles-card:not(.featured) {
+    min-height: 9em;
   }
 }
 .articles-box .articles-card .author {
@@ -599,6 +636,74 @@ header {
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 0.3em;
+}
+
+.articles-page .articles-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+@media (max-width: 992px) {
+  .articles-page .articles-list {
+    grid-template-columns: 1fr;
+  }
+}
+.articles-page .articles-list .articles-card {
+  display: block;
+  text-decoration: none;
+  min-height: 10em;
+}
+.articles-page .articles-list .articles-card img {
+  max-width: 15em;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 992px) {
+  .articles-page .articles-list .articles-card img {
+    width: 7em;
+    height: 7em;
+  }
+}
+@media (max-width: 1200px) {
+  .articles-page .articles-list .articles-card img {
+    width: 9em;
+    height: 9em;
+  }
+}
+.articles-page .articles-list .articles-card .body > h5 {
+  color: #212121;
+}
+.articles-page .articles-list .articles-card:hover {
+  background: #000f92;
+  padding: 0px;
+}
+.articles-page .articles-list .articles-card:hover .body > h5 {
+  color: white;
+}
+@media (max-width: 992px) {
+  .articles-page .articles-list .articles-card {
+    min-height: 7em;
+  }
+}
+@media (max-width: 1200px) {
+  .articles-page .articles-list .articles-card {
+    min-height: 9em;
+  }
+}
+.articles-page .articles-list .articles-card .author {
+  background: linear-gradient(90deg, #EB415C 0%, #F2715E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+}
+
+.about-page {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  background: linear-gradient(360deg, #00001E 0%, rgba(0, 0, 30, 0) 100%);
 }
 
 .client {
