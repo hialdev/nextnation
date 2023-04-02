@@ -98,7 +98,10 @@ h1{
 
 h2{
     font-size: 52px;
-
+    /* Extra small devices (phone) */
+    @media (max-width: $xs) {
+        font-size: 32px;
+    }
     /* Medium devices (laptop) */
     @media (min-width: $sm) and (max-width: $md) {
         font-size: 32px;
@@ -154,8 +157,51 @@ p,li{
     color: $soft;
 }
 
-//Main
-main{
+.sidebar{
+    .sidebar-box{
+        .sidebar-item{
+            display: block;
+            text-decoration: none;
+            margin-bottom: 1.7em;
+            img{
+                width: 100%;
+                border-radius: 15px;
+                margin: 1em 0px;
+            }
+            >h6{color: white;}
+
+            @media(max-width: $sm) {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                margin: 0px;
+                img{
+                    width: 8em !important;
+                    border-radius:5px !important;
+                }
+            }
+        }
+    }
+
+    //sidebar service
+    &.service{
+        .sidebar-item{
+            img{
+                width: 4em !important;
+            }
+            h4{color: white;margin-bottom: 0em;}
+            >div>div{
+                width: 2em;
+                height: 2em;
+                color: white;
+            }
+            &:hover h4{
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
 }
 
 // Menu
@@ -525,7 +571,27 @@ header{
         max-width: 100% !important;
     }
 }
-
+.service-item-page{
+    .container{
+        img{
+            width: 100%;
+            max-height: 30em;
+            object-fit: cover;
+            border-radius: 35px;
+            margin: 1em 0px;
+        }
+        .icon{
+            img{
+                width: 5em;
+                height: 5em;
+                object-fit: cover;
+                padding: 0.9em;
+                border: 3px solid white;
+                border-radius: 0px;
+            }
+        }
+    }
+}
 
 .project{
     padding: 5em 0px;
@@ -623,6 +689,11 @@ header{
                     max-width: 15em;
                     height: 100%;
                     object-fit: cover;
+                    /* Small devices (tablet) */
+                    @media (min-width: 0px) and (max-width: $xs) {
+                        width: 5em !important;
+                        height: 5em !important;
+                    }
                     @media(max-width: $md) {
                         width: 7em;
                         height: 7em;
@@ -634,13 +705,21 @@ header{
                 }
                 .body{
                     >h5{color: #212121;}
+                    /* Small devices (tablet) */
+                    @media (min-width: 0px) and (max-width: $xs) {
+                        h5{
+                            font-size: 14px;
+                        }
+                    }
                 }
                 &:hover{
                     background: $blue;
                     padding: 0px;
                     .body>h5{color: white;}
                 }
-
+                @media (min-width: 0px) and (max-width: $xs) {
+                    min-height: 5em !important;
+                }
                 @media(max-width: $md) {
                     min-height: 7em;
                 }
@@ -677,6 +756,11 @@ header{
                 max-width: 15em;
                 height: 100%;
                 object-fit: cover;
+                /* Small devices (tablet) */
+                @media (min-width: 0px) and (max-width: $xs) {
+                    width: 5em !important;
+                    height: 5em !important;
+                }
                 @media(max-width: $md) {
                     width: 7em;
                     height: 7em;
@@ -688,13 +772,22 @@ header{
             }
             .body{
                 >h5{color: #212121;}
+                /* Small devices (tablet) */
+                @media (min-width: 0px) and (max-width: $xs) {
+                    h5{
+                        font-size: 14px;
+                    }
+                }
             }
             &:hover{
                 background: $blue;
                 padding: 0px;
                 .body>h5{color: white;}
             }
-
+            
+            @media (min-width: 0px) and (max-width: $xs) {
+                min-height: 5em !important;
+            }
             @media(max-width: $md) {
                 min-height: 7em;
             }
@@ -713,6 +806,24 @@ header{
         }
     }
 }
+.articles-page-item{
+    img{
+        width: 100%;
+        margin: 1.5em 0px;
+        max-height: 35em;
+        object-fit: cover;
+        border-radius: 25px;
+    }
+    .author{
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+        font-size: 12px;
+        letter-spacing: 0.3em;
+    }
+}
+
 .about-page{
     padding-top: 4em;
     padding-bottom: 4em;
